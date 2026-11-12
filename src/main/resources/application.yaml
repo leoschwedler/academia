@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: academia
+  datasource:
+    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5432}/${POSTGRES_DB:academia}
+    username: ${POSTGRES_USER:academia}
+    password: ${POSTGRES_PASSWORD:academia}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
